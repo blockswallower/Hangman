@@ -86,8 +86,24 @@ class hangman {
                         $_SESSION['dashArray'][$index] = $guess;
                     }
                 }
+
+                if ($this->allCharsGuessed()) {
+                    $this->game->endGame();
+                }
             }
         }
+    }
+
+    public function allCharsGuessed() {
+        $allCharsGuessed = true;
+
+        foreach ($_SESSION['dashArray'] as $char) {
+            if ($char == "-") {
+                $allCharsGuessed = false;
+            }
+        }
+
+        return $allCharsGuessed;
     }
 
     /**

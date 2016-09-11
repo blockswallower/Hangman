@@ -24,6 +24,10 @@ class game {
         return $result->fetchAll();
     }
 
+    public function endGame() {
+        header("Location: destroy.php");
+    }
+
     /**
      * @return int
      */
