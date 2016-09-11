@@ -1,18 +1,80 @@
 <?php
 
+include "game.php";
+
 class hangman {
     private $maxGuesses;
     private $guessedLetters;
-    private $word;
+    private $game;
 
     public function __construct() {
         $this->maxGuesses = 3;
         $this->guessedLetters = null;
+        $this->game = new game();
+
+        // fetch word
+        if (!isset($_SESSION['word'])) {
+            $array = $this->game->getWords("words");
+            $rand_int = array_rand($array);
+            $word = $array[$rand_int][1];
+            $this->setWord($word);
+
+            $_SESSION['dashArray'] = $this->fillDashArray($word);
+            $_SESSION['charArray'] = str_split($word);
+        }
     }
 
-    public function fillDashes($word) {
+    public function fillDashArray($word) {
+        $array = [];
+
         for ($ii = 0; $ii < strlen($word); $ii++) {
-            echo " - ";
+            $array[$ii] = "-";
+        }
+
+        return $array;
+    }
+
+    public function printDashes() {
+        foreach ($_SESSION['dashArray'] as $dash) {
+            echo $dash. " ";
+        }
+    }
+
+    // Only for debugging
+    public function printChars() {
+        foreach ($_SESSION['charArray'] as $char) {
+            echo $char. " ";
+        }
+    }
+
+    public function findIndex($array, $item) {
+        $index = -1;
+
+        for ($ii = 0; $ii < count($array); $ii++) {
+            if ($array[$ii] == $item) {
+                $index = $ii;
+            }
+        }
+
+        return $index;
+    }
+
+    public function checkGuess() {
+        $guess = $_POST['guess'];
+
+        if (!empty($guess)) {
+            if (isset($guess)) {
+                if (strlen($guess) > 1) {
+                    $split = str_split($guess);
+                    $guess = $split[0];
+                }
+
+                if (in_array($guess, $_SESSION['charArray'])) {
+                    $index = $this->findIndex($_SESSION['charArray'], $guess);
+
+                    $_SESSION['dashArray'][$index] = $guess;
+                }
+            }
         }
     }
 
@@ -20,14 +82,14 @@ class hangman {
      * @return mixed
      */
     public function getWord() {
-        return $this->word;
+        return $_SESSION['word'];
     }
 
     /**
      * @param mixed $word
      */
     public function setWord($word) {
-        $this->word = $word;
+        $_SESSION['word'] = $word;
     }
 
     /**

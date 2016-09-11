@@ -1,18 +1,23 @@
 <?php
+session_start();
 
 include "database.php";
 include "hangman.php";
-include "game.php";
 
 $game = new game();
 $hangman = new hangman();
 
-$array = $game->getWords("words");
-$rand_int = array_rand($array);
-
-$word = $array[$rand_int][1];
-$hangman->setWord($word);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $hangman->checkGuess();
+}
 
 echo $hangman->getWord(). "<br>";
+$hangman->printDashes();
+echo "<br>";
+$hangman->printChars();
+echo "<br>"; ?>
 
-$hangman->fillDashes($word);
+<form method="post">
+    <input type="text" name="guess">
+    <input type="submit" value="Guess">
+</form>
