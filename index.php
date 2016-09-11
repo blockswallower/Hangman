@@ -13,7 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 echo "<center>";
 echo "<h1><b>Hangman</b></h1>";
-echo $hangman->getWord(). "<br>";
 $hangman->printDashes();
 echo "<br>";
 echo "Tries left: " . $_SESSION['tries'];
