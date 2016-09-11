@@ -13,8 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 echo $hangman->getWord(). "<br>";
 $hangman->printDashes();
-echo "<br>";
-$hangman->printChars();
 echo "<br>"; ?>
 
 <form method="post">

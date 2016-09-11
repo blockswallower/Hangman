@@ -52,7 +52,11 @@ class hangman {
 
         for ($ii = 0; $ii < count($array); $ii++) {
             if ($array[$ii] == $item) {
-                $index = $ii;
+                if ($_SESSION['dashArray'][$ii] != "-") {
+                    continue;
+                } else {
+                    $index = $ii;
+                }
             }
         }
 
@@ -70,9 +74,17 @@ class hangman {
                 }
 
                 if (in_array($guess, $_SESSION['charArray'])) {
-                    $index = $this->findIndex($_SESSION['charArray'], $guess);
+                    $guessedChars = [];
+                    for ($ii = 0; $ii < count($_SESSION['charArray']); $ii++) {
+                        if ($guess == $_SESSION['charArray'][$ii]) {
+                            $guessedChars[] = $guess;
+                        }
+                    }
 
-                    $_SESSION['dashArray'][$index] = $guess;
+                    foreach ($guessedChars as $char) {
+                        $index = $this->findIndex($_SESSION['charArray'], $char);
+                        $_SESSION['dashArray'][$index] = $guess;
+                    }
                 }
             }
         }
