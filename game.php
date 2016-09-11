@@ -1,18 +1,19 @@
 <?php
 
 class game {
-    private $health;
-    private $ended;
-    private $score;
-    private $won; 
-
     public $db;
 
     public function __construct() {
-        $this->health = 8;
-        $this->ended = false;
-        $this->score = 0;
-        $this->won = false;
+//        $this->health = 8;
+//        $this->ended = false;
+//        $this->score = 0;
+//        $this->won = false;
+        if (!isset($_SESSION['word'])) {
+            $_SESSION['tries'] = 8;
+            $_SESSION['ended'] = false;
+            $_SESSION['score'] = 0;
+            $_SESSION['won'] = false;
+        }
 
         $this->db = new database();
     }

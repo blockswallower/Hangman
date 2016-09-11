@@ -85,6 +85,12 @@ class hangman {
                         $index = $this->findIndex($_SESSION['charArray'], $char);
                         $_SESSION['dashArray'][$index] = $guess;
                     }
+                } else {
+                    $_SESSION['tries'] --;
+                }
+
+                if ($this->noTriesLeft()) {
+                    $this->game->endGame();
                 }
 
                 if ($this->allCharsGuessed()) {
@@ -104,6 +110,16 @@ class hangman {
         }
 
         return $allCharsGuessed;
+    }
+
+    public function noTriesLeft() {
+        $noTriesLeft = false;
+
+        if ($_SESSION['tries'] <= 0) {
+            $noTriesLeft = true;
+        }
+
+        return $noTriesLeft;
     }
 
     /**

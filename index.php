@@ -13,7 +13,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 echo $hangman->getWord(). "<br>";
 $hangman->printDashes();
-echo "<br>"; ?>
+echo "<br>";
+echo "Tries left: " . $_SESSION['tries'];
+echo "<br>";
+?>
+
 
 <form method="post">
     <input type="text" name="guess">
