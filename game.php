@@ -9,7 +9,7 @@ class game {
 //        $this->score = 0;
 //        $this->won = false;
         if (!isset($_SESSION['word'])) {
-            $_SESSION['tries'] = 8;
+            $_SESSION['tries'] = 12;
             $_SESSION['ended'] = false;
             $_SESSION['score'] = 0;
             $_SESSION['won'] = false;
