@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-include "database.php";
 include "hangman.php";
 include "graphics.php";
 

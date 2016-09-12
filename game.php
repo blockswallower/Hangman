@@ -1,14 +1,13 @@
 <?php
 
+include "database.php";
+
 class game {
     public $db;
 
     public function __construct() {
         if (!isset($_SESSION['word'])) {
-            $_SESSION['tries'] = 10;
-            $_SESSION['ended'] = false;
-            $_SESSION['score'] = 0;
-            $_SESSION['won'] = false;
+            $this->setTries(10);
         }
 
         $this->db = new database();
@@ -21,63 +20,28 @@ class game {
         return $result->fetchAll();
     }
 
+    public function addWord() {
+        if(!empty($_POST['word'])) {
+            if (isset($_POST['word'])) {
+                $word = $_POST["word"];
+
+                $insert = $this->db->prepare('INSERT INTO `hangman`.`words` (`id`, `word`) VALUES (NULL, "'. $word .'" );');
+                $insert->execute();
+
+                echo "<h4>Word added!</h4>";
+            } else {
+                echo "Fill in the input field";
+            }
+        } else {
+            echo "Fill in the input field";
+        }
+    }
+
     public function endGame() {
         header("Location: destroy.php");
     }
 
-    /**
-     * @return int
-     */
-    public function getHealth() {
-        return $this->health;
-    }
-
-    /**
-     * @param int $health
-     */
-    public function setHealth($health) {
-        $this->health = $health;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isEnded() {
-        return $this->ended;
-    }
-
-    /**
-     * @param boolean $ended
-     */
-    public function setEnded($ended) {
-        $this->ended = $ended;
-    }
-
-    /**
-     * @return int
-     */
-    public function getScore() {
-        return $this->score;
-    }
-
-    /**
-     * @param int $score
-     */
-    public function setScore($score) {
-        $this->score = $score;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isWon() {
-        return $this->won;
-    }
-
-    /**
-     * @param boolean $won
-     */
-    public function setWon($won) {
-        $this->won = $won;
+    public function setTries($amount) {
+        $_SESSION['tries'] = $amount;
     }
 }
