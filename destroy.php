@@ -26,6 +26,7 @@ include "graphics.php";
                 <input type="submit" value="play again?">
             </form>
         </center>
+        <br>
         <div id="gallow">
             <?php graphics::drawFullGallow(); ?>
         </div>

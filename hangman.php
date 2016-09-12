@@ -83,7 +83,10 @@ class hangman {
 
                     foreach ($guessedChars as $char) {
                         $index = $this->findIndex($_SESSION['charArray'], $char);
-                        $_SESSION['dashArray'][$index] = $guess;
+
+                        if ($index >= 0) {
+                            $_SESSION['dashArray'][$index] = $guess;
+                        }
                     }
                 } else {
                     $_SESSION['tries'] --;
