@@ -4,12 +4,8 @@ class game {
     public $db;
 
     public function __construct() {
-//        $this->health = 8;
-//        $this->ended = false;
-//        $this->score = 0;
-//        $this->won = false;
         if (!isset($_SESSION['word'])) {
-            $_SESSION['tries'] = 12;
+            $_SESSION['tries'] = 10;
             $_SESSION['ended'] = false;
             $_SESSION['score'] = 0;
             $_SESSION['won'] = false;

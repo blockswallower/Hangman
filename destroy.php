@@ -2,6 +2,8 @@
 session_start();
 session_destroy();
 session_unset();
+
+include "graphics.php";
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +12,10 @@ session_unset();
         <style>
             body {
                 font-size: 30px;
+            }
+
+            #gallow {
+                margin-left: 750px;
             }
         </style>
     </head>
@@ -20,5 +26,8 @@ session_unset();
                 <input type="submit" value="play again?">
             </form>
         </center>
+        <div id="gallow">
+            <?php graphics::drawFullGallow(); ?>
+        </div>
     </body>
 </html>

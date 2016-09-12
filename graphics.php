@@ -7,15 +7,15 @@ class graphics {
         $tries = $_SESSION['tries'];
 
         /*
-         * 12 tries left
+         * 10 tries left
          */
-        if ($tries >= 12) {
+        if ($tries >= 10) {
             echo "";
 
             /*
-             * 11 tries left
+             * 9 tries left
              */
-        } else if ($tries >= 11) {
+        } else if ($tries >= 9) {
             /*
              * Drawing:
              *
@@ -26,9 +26,9 @@ class graphics {
             }
 
             /*
-             * 10 tries left
+             * 8 tries left
              */
-        } else if ($tries == 10) {
+        } else if ($tries == 8) {
             /*
              * Drawing:
              *
@@ -51,9 +51,9 @@ class graphics {
             }
 
             /*
-             * 9 tries left
+             * 7 tries left
              */
-        } else if ($tries == 9) {
+        } else if ($tries == 7) {
             /*
              * Drawing:
              *
@@ -81,9 +81,9 @@ class graphics {
             }
 
             /*
-             * 8 tries left
+             * 6 tries left
              */
-        } else if ($tries == 8) {
+        } else if ($tries == 6) {
             /*
              * Drawing:
              *
@@ -119,9 +119,9 @@ class graphics {
             }
 
             /*
-             * 7 tries left
+             * 5 tries left
              */
-        } else if ($tries == 7) {
+        } else if ($tries == 5) {
             /*
              * Drawing:
              *
@@ -164,9 +164,9 @@ class graphics {
             }
 
             /*
-             * 6 tries left
+             * 4 tries left
              */
-        } else if ($tries == 6) {
+        } else if ($tries == 4) {
             /*
              * Drawing:
              *
@@ -215,8 +215,298 @@ class graphics {
             for ($ii = 0; $ii <= 3; $ii++) {
                 echo "# ";
             }
-        } else if ($tries == 5) {
 
+            /*
+             * 3 tries left
+             */
+        } else if ($tries == 3) {
+            /*
+             * Drawing:
+             *
+             * # # # # # # #
+             * #           |
+             * #           |
+             * #           O
+             * #           |
+             * #          /
+             * # # # #
+             */
+            for ($ii = 0; $ii <= 7; $ii++) {
+                echo "# ";
+            }
+
+            echo "<br>";
+
+            for ($ii = 0; $ii <= 4; $ii++) {
+                if ($ii == 2) {
+                    echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbspO
+                           <br>";
+                }
+
+                if ($ii == 2) {
+                    echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp|
+                           <br>";
+                }
+
+                if ($ii == 2) {
+                    echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp/
+                           <br>";
+                }
+
+                if ($ii == 0 || $ii == 1) {
+                    echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp|
+                           <br>";
+                } else {
+                    echo "# <br>";
+                }
+            }
+
+            for ($ii = 0; $ii <= 3; $ii++) {
+                echo "# ";
+            }
+
+            /*
+             * 2 tries left
+             */
+        } else if ($tries == 2) {
+            /*
+            * Drawing:
+            *
+            * # # # # # # #
+            * #           |
+            * #           |
+            * #           O
+            * #           |
+            * #          /\
+            * # # # #
+            */
+            for ($ii = 0; $ii <= 7; $ii++) {
+                echo "# ";
+            }
+
+            echo "<br>";
+
+            for ($ii = 0; $ii <= 4; $ii++) {
+                if ($ii == 2) {
+                    echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbspO
+                           <br>";
+                }
+
+                if ($ii == 2) {
+                    echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp|
+                           <br>";
+                }
+
+                if ($ii == 2) {
+                    echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp/\
+                           <br>";
+                }
+
+                if ($ii == 0 || $ii == 1) {
+                    echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp|
+                           <br>";
+                } else {
+                    echo "# <br>";
+                }
+            }
+
+            for ($ii = 0; $ii <= 3; $ii++) {
+                echo "# ";
+            }
+
+            /*
+             * 1 tries left
+             */
+        } else if ($tries == 1) {
+            /*
+            * Drawing:
+            *
+            * # # # # # # #
+            * #           |
+            * #           |
+            * #          \O
+            * #           |
+            * #          /\
+            * # # # #
+            */
+            for ($ii = 0; $ii <= 7; $ii++) {
+                echo "# ";
+            }
+
+            echo "<br>";
+
+            for ($ii = 0; $ii <= 4; $ii++) {
+                if ($ii == 2) {
+                    echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp\O
+                           <br>";
+                }
+
+                if ($ii == 2) {
+                    echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp|
+                           <br>";
+                }
+
+                if ($ii == 2) {
+                    echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp/\
+                           <br>";
+                }
+
+                if ($ii == 0 || $ii == 1) {
+                    echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp|
+                           <br>";
+                } else {
+                    echo "# <br>";
+                }
+            }
+
+            for ($ii = 0; $ii <= 3; $ii++) {
+                echo "# ";
+            }
+
+            /*
+             * 0 tries left
+             */
+        } else if ($tries == 0) {
+            /*
+            * Drawing:
+            *
+            * # # # # # # #
+            * #           |
+            * #           |
+            * #          \O/
+            * #           |
+            * #          /\
+            * # # # #
+            */
+            for ($ii = 0; $ii <= 7; $ii++) {
+                echo "# ";
+            }
+
+            echo "<br>";
+
+            for ($ii = 0; $ii <= 4; $ii++) {
+                if ($ii == 2) {
+                    echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp\O/
+                           <br>";
+                }
+
+                if ($ii == 2) {
+                    echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp|
+                           <br>";
+                }
+
+                if ($ii == 2) {
+                    echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp/\
+                           <br>";
+                }
+
+                if ($ii == 0 || $ii == 1) {
+                    echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp|
+                           <br>";
+                } else {
+                    echo "# <br>";
+                }
+            }
+
+            for ($ii = 0; $ii <= 3; $ii++) {
+                echo "# ";
+            }
+        }
+    }
+
+    public static function drawFullGallow() {
+        for ($ii = 0; $ii <= 7; $ii++) {
+            echo "# ";
+        }
+
+        echo "<br>";
+
+        for ($ii = 0; $ii <= 4; $ii++) {
+            if ($ii == 2) {
+                echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp\O/
+                           <br>";
+            }
+
+            if ($ii == 2) {
+                echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp|
+                           <br>";
+            }
+
+            if ($ii == 2) {
+                echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp/\
+                           <br>";
+            }
+
+            if ($ii == 0 || $ii == 1) {
+                echo "# &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp&nbsp
+                           &nbsp&nbsp&nbsp|
+                           <br>";
+            } else {
+                echo "# <br>";
+            }
+        }
+
+        for ($ii = 0; $ii <= 3; $ii++) {
+            echo "# ";
         }
     }
 }
